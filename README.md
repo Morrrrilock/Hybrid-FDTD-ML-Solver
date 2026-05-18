@@ -15,7 +15,7 @@ The framework consists of four major stages:
 ## 1.Pure FDTD Simulation
 A full 3D FDTD simulation is first performed for 300 time steps. During the simulation, the central slice of the pressure field is recorded at each time step to generate training data for the neural network.
 ## 2.CNN-Based Temporal Learning
-A 2D convolutional neural network is trained to learn temporal wavefield evolution. The model takes the previous five wavefield snapshots as input and predicts the next time-step pressure field. The dataset is split chronologically, using the first 20% of samples for training and the remaining 80% for validation in order to preserve temporal causality.
+A 2D convolutional neural network is trained to learn temporal wavefield evolution. The model takes the previous five wavefield snapshots as input and predicts the next time-step pressure field. The dataset is split chronologically, with the first 20% of samples used for training.
 ## 3.Autoregressive Wavefield Prediction
 During prediction, the solver first performs 60 initial FDTD steps to construct the initial temporal history window. The CNN then recursively predicts future wavefields using its own previous predictions as inputs, forming an autoregressive forecasting loop for long-term wavefield evolution.
 ## 4.Prediction Error Evaluation
