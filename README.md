@@ -55,9 +55,7 @@ The CFL stability condition is:
 * Gaussian pressure bump initialization
 * Ricker wavelet source
 * Neumann boundary conditions
-* Prediction error evaluation
-* Scientific visualization tools
-* Hybrid physics–ML framework
+* Hybrid FDTD–ML framework
 
 ---
 
