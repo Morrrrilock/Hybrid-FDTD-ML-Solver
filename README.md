@@ -27,8 +27,6 @@ The solver is based on the 3D linear acoustic wave equation:
 <p align="center">
   <img src="figures/wave_equation.png" width="200">
 </p>
----
-
 # Numerical Scheme
 
 The solver employs a second-order explicit FDTD update scheme:
@@ -43,8 +41,6 @@ The CFL stability condition is:
 <p align="center">
   <img src="figures/Courant Stability Condition.png" width="140">
 </p>
----
-
 # Features
 
 * 3D acoustic wave equation solver
