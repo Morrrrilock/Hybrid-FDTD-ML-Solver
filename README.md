@@ -24,33 +24,25 @@ The framework first generates wavefield data using a standard 3D acoustic FDTD s
 # Governing Equation
 
 The solver is based on the 3D linear acoustic wave equation:
-
 <p align="center">
-  <img src="./figures/wave_equation.png" width="420"/>
+  <img src="figures/wave_equation.png" width="200">
 </p>
-
 ---
 
 # Numerical Scheme
 
 The solver employs a second-order explicit FDTD update scheme:
-
 <p align="center">
-  <img src="./figures/update_scheme.png" width="900"/>
+  <img src="figures/Second-order explicit FDTD update equation.png" width="500">
 </p>
-
 The Courant number is defined as:
-
 <p align="center">
-  <img src="./figures/courant_number.png" width="250"/>
+  <img src="figures/Courant–Friedrichs–Lewy (CFL) Number.png" width="160">
 </p>
-
 The CFL stability condition is:
-
 <p align="center">
-  <img src="./figures/courant_condition.png" width="220"/>
+  <img src="figures/Courant Stability Condition.png" width="140">
 </p>
-
 ---
 
 # Features
@@ -263,7 +255,7 @@ This project is released under the MIT License.
 
 # Author
 
-Developed by Zongwen Hu for research in:
+Developed by Zongwen(Alex) Hu for research in:
 
 * Computational acoustics
 * Scientific computing
