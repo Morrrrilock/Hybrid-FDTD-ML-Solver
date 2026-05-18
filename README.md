@@ -6,18 +6,22 @@ Hybrid FDTD–machine learning framework for autoregressive acoustic wavefield p
 
 # Overview
 
-This repository presents a hybrid finite-difference time-domain (FDTD) and machine learning framework for acoustic wave propagation and autoregressive wavefield prediction.
+This repository implements a hybrid finite-difference time-domain (FDTD) and convolutional neural network (CNN) framework for simulating and predicting three-dimensional acoustic wave propagation inside a rigid cubic domain.
 
-The project combines:
+The physical model solves the linear acoustic wave equation for pressure-field evolution inside a rigid cubic domain of size 0.5 m × 0.5 m × 0.5 m with Neumann boundary conditions. The speed of sound is set to 343 m/s. An enhanced Ricker wavelet source is used together with an initial Gaussian pressure bump to generate stronger early-stage wave amplitudes and improve temporal learning behavior.
 
-* Physics-based FDTD simulation
-* CNN-based autoregressive prediction
-* GPU acceleration using CuPy
-* Deep learning with PyTorch
-* Temporal wavefield forecasting
-* Scientific machine learning workflows
+The framework consists of four major stages:
 
-The framework first generates wavefield data using a standard 3D acoustic FDTD solver and then trains a convolutional neural network (CNN) to predict future wavefield evolution autoregressively.
+Pure FDTD Simulation
+A full 3D FDTD simulation is first performed for 300 time steps. During the simulation, the central slice of the pressure field is recorded at each time step to generate training data for the neural network.
+CNN-Based Temporal Learning
+A 2D convolutional neural network is trained to learn temporal wavefield evolution. The model takes the previous five wavefield snapshots as input and predicts the next time-step pressure field. The dataset is split chronologically, using the first 20% of samples for training and the remaining 80% for validation in order to preserve temporal causality.
+Autoregressive Wavefield Prediction
+During prediction, the solver first performs 60 initial FDTD steps to construct the initial temporal history window. The CNN then recursively predicts future wavefields using its own previous predictions as inputs, forming an autoregressive forecasting loop for long-term wavefield evolution.
+Prediction Error Evaluation
+The predicted wavefields are compared against the ground-truth FDTD solution to evaluate long-term prediction accuracy, signal evolution, and error accumulation behavior.
+
+The framework supports GPU acceleration using CuPy and CUDA-enabled PyTorch, and includes progress monitoring, visualization utilities, and multi-panel result analysis for wavefield prediction and error evaluation.
 
 ---
 
