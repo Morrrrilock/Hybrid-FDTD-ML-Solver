@@ -111,33 +111,39 @@ Supported platforms:
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
 Hybrid-FDTD-ML-Solver/
 │
 ├── hybrid_fdtd_ml_solver.py
 │   Main implementation of the hybrid FDTD–ML framework
+│   including FDTD simulation, CNN training, and autoregressive prediction
 │
 ├── README.md
-│   Project documentation and usage instructions
+│   Project overview, equations, installation, and usage instructions
 │
 ├── requirements.txt
 │   Python dependencies required for the project
 │
 ├── figures/
-│   Equation images and visualization figures
+│   Equation images and documentation figures used in the README
 │   ├── wave_equation.png
 │   ├── update_scheme.png
 │   ├── courant_number.png
 │   ├── courant_condition.png
-│   └── autoregressive_results_enhanced.png
 │
 ├── results/
-│   Generated prediction and benchmarking results
+│   Generated prediction and visualization results
+│   └── autoregressive_results_enhanced.png
 │
-└── .gitignore
-    Git ignore rules for environments and cache files
+├── .gitignore
+│   Git ignore rules for cache files, environments, and temporary outputs
+│
+└── LICENSE
+    MIT License for open-source usage
+```
+
 ```
 
 ---
