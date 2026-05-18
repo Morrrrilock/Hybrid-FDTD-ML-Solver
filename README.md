@@ -50,15 +50,11 @@ The CFL stability condition is:
 # Features
 
 * 3D acoustic wave equation solver
-* GPU acceleration with CuPy
-* PyTorch-based CNN prediction model
 * Autoregressive wavefield forecasting
 * Temporal sequence learning
-* Enhanced initial wave amplitudes
 * Gaussian pressure bump initialization
 * Ricker wavelet source
 * Neumann boundary conditions
-* Receiver signal analysis
 * Prediction error evaluation
 * Scientific visualization tools
 * Hybrid physics–ML framework
@@ -111,9 +107,7 @@ Supported platforms:
 
 * NVIDIA CUDA GPUs
 * Windows
-* Linux
-* Jupyter Notebook
-* Google Colab
+* PyCharm
 
 ---
 
@@ -187,7 +181,7 @@ tqdm
 Run the complete hybrid FDTD–ML demo:
 
 ```bash
-python hybrid_fdtd_ml_solver.py
+python FDTD_CNN.py
 ```
 
 The script will:
@@ -210,13 +204,6 @@ The framework produces:
 * Signal envelope analysis
 * CNN autoregressive forecasts
 
-Generated figures include:
-
-* FDTD vs CNN prediction comparison
-* Error evolution
-* Wave amplitude analysis
-* Temporal forecasting performance
-
 ---
 
 # Applications
@@ -234,21 +221,6 @@ Potential applications include:
 
 ---
 
-# Future Work
-
-Planned extensions:
-
-* 3D CNN architectures
-* Transformer-based wave prediction
-* Multi-step forecasting
-* Physics-informed neural networks (PINNs)
-* Differentiable FDTD
-* Absorbing boundary conditions (PML)
-* Binaural acoustic simulation
-* Hybrid FDTD–transformer frameworks
-
----
-
 # License
 
 This project is released under the MIT License.
@@ -260,8 +232,7 @@ This project is released under the MIT License.
 Developed by Zongwen(Alex) Hu for research in:
 
 * Computational acoustics
-* Scientific computing
-* GPU acceleration
+* Hybrid Solver
 * Scientific machine learning
 * Wave propagation simulation
 
