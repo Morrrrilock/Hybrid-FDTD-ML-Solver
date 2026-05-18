@@ -12,13 +12,13 @@ The physical model solves the linear acoustic wave equation for pressure-field e
 
 The framework consists of four major stages:
 
-Pure FDTD Simulation
+# 1.Pure FDTD Simulation
 A full 3D FDTD simulation is first performed for 300 time steps. During the simulation, the central slice of the pressure field is recorded at each time step to generate training data for the neural network.
-CNN-Based Temporal Learning
+# 2.CNN-Based Temporal Learning
 A 2D convolutional neural network is trained to learn temporal wavefield evolution. The model takes the previous five wavefield snapshots as input and predicts the next time-step pressure field. The dataset is split chronologically, using the first 20% of samples for training and the remaining 80% for validation in order to preserve temporal causality.
-Autoregressive Wavefield Prediction
+# 3.Autoregressive Wavefield Prediction
 During prediction, the solver first performs 60 initial FDTD steps to construct the initial temporal history window. The CNN then recursively predicts future wavefields using its own previous predictions as inputs, forming an autoregressive forecasting loop for long-term wavefield evolution.
-Prediction Error Evaluation
+# 4.Prediction Error Evaluation
 The predicted wavefields are compared against the ground-truth FDTD solution to evaluate long-term prediction accuracy, signal evolution, and error accumulation behavior.
 
 The framework supports GPU acceleration using CuPy and CUDA-enabled PyTorch, and includes progress monitoring, visualization utilities, and multi-panel result analysis for wavefield prediction and error evaluation.
